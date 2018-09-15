@@ -2,10 +2,10 @@
 Simply find and replace instances below with the coin and symbol you want to use!
 search and replace with case sensitivity!!
 example:
-1. boxy   = ethereum
-2. Boxy   = Ethereum
-3. boxy        = eth
-4. BOXY        = ETH
+1. blastx   = ethereum
+2. Blastx   = Ethereum
+3. blastx        = eth
+4. BLASTX        = ETH
 */
 
 'use strict';
@@ -20,15 +20,15 @@ process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 let Regex = require('regex'),
   config = require('config'),
   spamchannels = config.get('moderation').botspamchannels;
-let walletConfig = config.get('boxyd');
-const boxy = new bitcoin.Client(walletConfig); //leave as = new bitcoin.Client(walletConfig)
+let walletConfig = config.get('blastxd');
+const blastx = new bitcoin.Client(walletConfig); //leave as = new bitcoin.Client(walletConfig)
 
-exports.commands = ['tipboxy'];
-exports.tipboxy = {
+exports.commands = ['directCommands', 'tipblastx'];
+exports.tipblastx = {
   usage: '<subcommand>',
   description:
-    '__**BOXY Coin Tipper**__\n    **$bal** : get your balance\n    **$deposit** : get address for your deposits\n    **$withdraw <ADDRESS> <AMOUNT>** : withdraw coins to specified address\n    **$tip <@user> <amount>** :mention a user with @ and then the amount to tip them\n    **$tip private <user> <amount>** : put private before Mentioning a user to tip them privately.\n    **$soak <AMOUNT>** : gives coins to all Active users.\n.   **$rain <AMOUNT>** : gives coins to users who have sent a message recently.\n    **$drizzle <AMOUNT>** : gives coins to the last 5 active users.\n' +
-      '    **$price** : get price of BOXY coin\n    **$block** : get current block height\n    **$supply** : get # of BOXY coins are in supply\n',
+    '__**BLASTX Coin Tipper**__\n    **$bal** : get your balance\n    **$deposit** : get address for your deposits\n    **$withdraw <ADDRESS> <AMOUNT>** : withdraw coins to specified address\n    **$tip <@user> <amount>** :mention a user with @ and then the amount to tip them\n    **$tip private <user> <amount>** : put private before Mentioning a user to tip them privately.\n    **$soak <AMOUNT>** : gives coins to all Active users.\n.   **$rain <AMOUNT>** : gives coins to users who have sent a message recently.\n    **$drizzle <AMOUNT>** : gives coins to the last 5 active users.\n' +
+      '    **$price** : get price of BLASTX coin\n    **$block** : get current block height\n    **$supply** : get # of BLASTX coins are in supply\n',
   process: async function(bot, msg, suffix) {
     let tipper = msg.author.id.replace('!', ''),
       words = msg.content
@@ -39,8 +39,8 @@ exports.tipboxy = {
         }),
       subcommand = words.length >= 2 ? words[1] : 'help',
       helpmsg =
-        '__**BOXY Coin Tipper**__\n    **$bal** : get your balance\n    **$deposit** : get address for your deposits\n    **$withdraw <ADDRESS> <AMOUNT>** : withdraw coins to specified address\n    **$tip <@user> <amount>** :mention a user with @ and then the amount to tip them\n    **$tip private <user> <amount>** : put private before Mentioning a user to tip them privately.\n    **$soak <AMOUNT>** : gives coins to all Active users.\n.   **$rain <AMOUNT>** : gives coins to users who have sent a message recently.\n    **$drizzle <AMOUNT>** : gives coins to the last 5 active users.\n' +
-          '    **$price** : get price of BOXY coin\n    **$block** : get current block height\n    **$supply** : get # of BOXY coins are in supply\n',
+        '__**BLASTX Coin Tipper**__\n    **$bal** : get your balance\n    **$deposit** : get address for your deposits\n    **$withdraw <ADDRESS> <AMOUNT>** : withdraw coins to specified address\n    **$tip <@user> <amount>** :mention a user with @ and then the amount to tip them\n    **$tip private <user> <amount>** : put private before Mentioning a user to tip them privately.\n    **$soak <AMOUNT>** : gives coins to all Active users.\n.   **$rain <AMOUNT>** : gives coins to users who have sent a message recently.\n    **$drizzle <AMOUNT>** : gives coins to the last 5 active users.\n' +
+          '    **$price** : get price of BLASTX coin\n    **$block** : get current block height\n    **$supply** : get # of BLASTX coins are in supply\n',
       channelwarning = 'Please use <#bot-spam> or DMs to talk to bots.';
     switch (subcommand) {
       case 'help':
@@ -73,8 +73,8 @@ exports.tipboxy = {
 exports.directCommands = {
   usage: '<subcommand>',
   description:
-    '__**BOXY Coin Tipper**__\n    **$bal** : get your balance\n    **$deposit** : get address for your deposits\n    **$withdraw <ADDRESS> <AMOUNT>** : withdraw coins to specified address\n    **$tip <@user> <amount>** :mention a user with @ and then the amount to tip them\n    **$tip private <user> <amount>** : put private before Mentioning a user to tip them privately.\n    **$soak <AMOUNT>** : gives coins to all Active users.\n.   **$rain <AMOUNT>** : gives coins to users who have sent a message recently.\n    **$drizzle <AMOUNT>** : gives coins to the last 5 active users.\n' +
-      '    **$price** : get price of BOXY coin\n    **$block** : get current block height\n    **$supply** : get # of BOXY coins are in supply\n',
+    '__**BLASTX Coin Tipper**__\n    **$bal** : get your balance\n    **$deposit** : get address for your deposits\n    **$withdraw <ADDRESS> <AMOUNT>** : withdraw coins to specified address\n    **$tip <@user> <amount>** :mention a user with @ and then the amount to tip them\n    **$tip private <user> <amount>** : put private before Mentioning a user to tip them privately.\n    **$soak <AMOUNT>** : gives coins to all Active users.\n.   **$rain <AMOUNT>** : gives coins to users who have sent a message recently.\n    **$drizzle <AMOUNT>** : gives coins to the last 5 active users.\n' +
+      '    **$price** : get price of BLASTX coin\n    **$block** : get current block height\n    **$supply** : get # of BLASTX coins are in supply\n',
   process: async function(bot, msg, suffix) {
     let tipper = msg.author.id.replace('$', ''),
     words = msg.content
@@ -87,8 +87,8 @@ exports.directCommands = {
     subcommand = words.length >= 1 ? words[0] : 'help',
     cmdOffset = "-1",
     helpmsg =
-      '__**BOXY Coin Tipper**__\n    **$bal** : get your balance\n    **$deposit** : get address for your deposits\n    **$withdraw <ADDRESS> <AMOUNT>** : withdraw coins to specified address\n    **$tip <@user> <amount>** :mention a user with @ and then the amount to tip them\n    **$tip private <user> <amount>** : put private before Mentioning a user to tip them privately.\n    **$soak <AMOUNT>** : gives coins to all Active users.\n.   **$rain <AMOUNT>** : gives coins to users who have sent a message recently.\n    **$drizzle <AMOUNT>** : gives coins to the last 5 active users.\n' +
-        '    **$price** : get price of BOXY coin\n    **$block** : get current block height\n    **$supply** : get # of BOXY coins are in supply\n',
+      '__**BLASTX Coin Tipper**__\n    **$bal** : get your balance\n    **$deposit** : get address for your deposits\n    **$withdraw <ADDRESS> <AMOUNT>** : withdraw coins to specified address\n    **$tip <@user> <amount>** :mention a user with @ and then the amount to tip them\n    **$tip private <user> <amount>** : put private before Mentioning a user to tip them privately.\n    **$soak <AMOUNT>** : gives coins to all Active users.\n.   **$rain <AMOUNT>** : gives coins to users who have sent a message recently.\n    **$drizzle <AMOUNT>** : gives coins to the last 5 active users.\n' +
+        '    **$price** : get price of BLASTX coin\n    **$block** : get current block height\n    **$supply** : get # of BLASTX coins are in supply\n',
     channelwarning = 'Please use <#bot-spam> or DMs to talk to bots.';
     switch (subcommand) {
       case 'tip':
@@ -146,11 +146,11 @@ function doHelp(message, helpmsg) {
 }
 
 function doBalance(message, tipper) {
-  boxy.getBalance(tipper, 1, function(err, balance) {
+  blastx.getBalance(tipper, 1, function(err, balance) {
     if (err) {
-      message.reply('Error getting Boxy balance.').then(message => message.delete(5000));
+      message.reply('Error getting Blastx balance.').then(message => message.delete(5000));
     } else {
-      message.reply('You have **' + balance + ' BOXY** :moneybag:');
+      message.reply('You have **' + balance + ' BLASTX** :moneybag:');
     }
   });
 }
@@ -158,9 +158,9 @@ function doBalance(message, tipper) {
 function doDeposit(message, tipper) {
   getAddress(tipper, function(err, address) {
     if (err) {
-      message.reply('Error getting your Boxy deposit address.').then(message => message.delete(5000));
+      message.reply('Error getting your Blastx deposit address.').then(message => message.delete(5000));
     } else {
-      message.reply('Your Boxy (BOXY) address is ' + address);
+      message.reply('Your Blastx (BLASTX) address is ' + address);
     }
   });
 }
@@ -176,17 +176,17 @@ function doWithdraw(message, tipper, words, helpmsg, cmdOffset) {
     amount = getValidatedAmount(words[eval("3"+cmdOffset)]);
 
   if (amount === null) {
-    message.reply("I don't know how to withdraw that many Boxy coins...").then(message => message.delete(5000));
+    message.reply("I don't know how to withdraw that many Blastx coins...").then(message => message.delete(5000));
     return;
   }
 
-  boxy.getBalance(tipper, function(err, balance) {
+  blastx.getBalance(tipper, function(err, balance) {
     if (amount < balance) {
-      boxy.sendFrom(tipper, address, Number(amount-0.00001), function(err, txId) {
+      blastx.sendFrom(tipper, address, Number(amount-0.00001), function(err, txId) {
         if (err) {
           message.reply("Balance Error: " + err.message).then(message => message.delete(5000));
         } else {
-          message.reply('You withdrew ' + amount + ' BOXY to ' + address + '\n' + txLink(txId) + '\n');
+          message.reply('You withdrew ' + amount + ' BLASTX to ' + address + '\n' + txLink(txId) + '\n');
         }
       });
     } else {
@@ -212,7 +212,7 @@ function doTip(bot, message, tipper, words, helpmsg, cmdOffset) {
   let amount = getValidatedAmount(words[amountOffset]);
 
   if (amount === null) {
-    message.reply("I don't know how to tip that many Boxy coins...").then(message => message.delete(5000));
+    message.reply("I don't know how to tip that many Blastx coins...").then(message => message.delete(5000));
     return;
   }
   if (!message.mentions.users.first()){
@@ -222,9 +222,9 @@ function doTip(bot, message, tipper, words, helpmsg, cmdOffset) {
         return;
       }
   if (message.mentions.users.first().id) {
-    boxy.getBalance(tipper, function(err, balance) {
+    blastx.getBalance(tipper, function(err, balance) {
       if (amount < balance) {
-        sendBOXY(bot, message, tipper, message.mentions.users.first().id.replace('!', ''), amount, prv);
+        sendBLASTX(bot, message, tipper, message.mentions.users.first().id.replace('!', ''), amount, prv);
       } else {
         message.reply("Account has insufficient funds").then(message => message.delete(5000));
       }
@@ -250,14 +250,14 @@ function doSoakRainDrizzle(bot, message, tipper, words, helpmsg, tipType, cmdOff
   let amount = getValidatedAmount(words[amountOffset]);
 
   if (amount === null) {
-    message.reply("I don't know how to tip that many Boxy coins...").then(message => message.delete(5000));
+    message.reply("I don't know how to tip that many Blastx coins...").then(message => message.delete(5000));
     return;
   } else if (amount < 0.01){
-    message.reply("Atleast 0.01 BOXY is required to rain").then(message => message.delete(5000));
+    message.reply("Atleast 0.01 BLASTX is required to rain").then(message => message.delete(5000));
     return;
   }
 
-  boxy.getBalance(tipper, function(err, balance){
+  blastx.getBalance(tipper, function(err, balance){
     if(amount < balance){
       let serverid = message.channel.guild.id;
       let members = bot.guilds.get(serverid).members;
@@ -301,7 +301,7 @@ function doSoakRainDrizzle(bot, message, tipper, words, helpmsg, tipType, cmdOff
       }
     }
     function sendAll (tipper, data, tippedMessage, tl, ind, setUsernames){
-        boxy.sendMany(tipper, data, 2, 'Nemo From Example.com', function(res, tr){
+        blastx.sendMany(tipper, data, 2, 'Nemo From Example.com', function(res, tr){
             console.log(res);
             console.log(tr);
         });
@@ -338,9 +338,9 @@ function soak(amount, online, callback){
       }
   });
   setUsernames.push(onlineUsername);
-  callback(onlineID, onlineID.length + " users currently online. No BOXY is rained",
-      ":thunder_cloud_rain: BOXY Coins are falling from the sky!!! :thunder_cloud_rain: \n**" +
-      amount/onlineID.length + " BOXY** soaked on " + setUsernames[0], setUsernames);
+  callback(onlineID, onlineID.length + " users currently online. No BLASTX is rained",
+      ":thunder_cloud_rain: BLASTX Coins are falling from the sky!!! :thunder_cloud_rain: \n**" +
+      amount/onlineID.length + " BLASTX** soaked on " + setUsernames[0], setUsernames);
 }
 
 function rain(amount, online, message, callback){
@@ -365,8 +365,8 @@ function rain(amount, online, message, callback){
       }
     }
   });
-  callback(onlineID, "No new messages, since I woke up", ":cloud_rain: BOXY Coins are raining from the sky!!! :cloud_rain: \n" +
-      "**" + amount/onlineID.length + " BOXY** rained down on " + onlineUsername + " :rocket:");
+  callback(onlineID, "No new messages, since I woke up", ":cloud_rain: BLASTX Coins are raining from the sky!!! :cloud_rain: \n" +
+      "**" + amount/onlineID.length + " BLASTX** rained down on " + onlineUsername + " :rocket:");
 }
 
 function drizzle(amount, online, message, callback){
@@ -396,18 +396,18 @@ function drizzle(amount, online, message, callback){
     onlineUsername = onlineUsername + " <@" + user.id + ">";
     return user.id;
   });
-  callback(onlineID,"No new messages, since I woke up", ":white_sun_rain_cloud: BOXY Coins are drizzling from the sky!!! :white_sun_rain_cloud: \n" +
-      "**" + amount/onlineID.length + " BOXY** rained down on " + onlineUsername + " :rocket:");
+  callback(onlineID,"No new messages, since I woke up", ":white_sun_rain_cloud: BLASTX Coins are drizzling from the sky!!! :white_sun_rain_cloud: \n" +
+      "**" + amount/onlineID.length + " BLASTX** rained down on " + onlineUsername + " :rocket:");
 }
 
 function getPrice(bot, msg){
-  getDataFromAPI("https://cryptohub.online/api/market/ticker/BOXY/", true, function(data){
+  getDataFromAPI("https://cryptohub.online/api/market/ticker/BLASTX/", true, function(data){
     let result = JSON.parse(data);
     if (result !== "undefined") {
-      if (result.BTC_BOXY) {
+      if (result.BTC_BLASTX) {
         sendEmbedMessages(msg, "", 3447003, [{
-          name: "Cryptohub - BOXY Price",
-          value: "**" + result.BTC_BOXY.last + "** BTC/BOXY"
+          name: "Cryptohub - BLASTX Price",
+          value: "**" + result.BTC_BLASTX.last + "** BTC/BLASTX"
         }])
       } else {
         msg.reply("Price is not set by buyers/sellers")
@@ -417,11 +417,11 @@ function getPrice(bot, msg){
 }
 
 function getBlock(bot, msg){
-  getDataFromAPI("https://boxy.blockxplorer.info/api/getblockcount", true, function(result){
+  getDataFromAPI("https://blastx.blockxplorer.info/api/getblockcount", true, function(result){
     if (result !== "undefined") {
       if (result) {
         sendEmbedMessages(msg, "", 0x00AE86, [{
-          name: "BOXY Coin - Current BLOCK",
+          name: "BLASTX Coin - Current BLOCK",
           value: "Block height: **" + result + "**"
         }])
       } else {
@@ -432,11 +432,11 @@ function getBlock(bot, msg){
 }
 
 function getWeight(bot, msg){
-  getDataFromAPI("https://boxy.blockxplorer.info/api/getdifficulty", true, function(result){
+  getDataFromAPI("https://blastx.blockxplorer.info/api/getdifficulty", true, function(result){
     if (result !== "undefined") {
       if (result) {
         sendEmbedMessages(msg, "", 0xF55555, [{
-          name: "BOXY Coin - Current Staking weight",
+          name: "BLASTX Coin - Current Staking weight",
           value: "Staking Weight: **" + result + "**"
         }])
       } else {
@@ -447,12 +447,12 @@ function getWeight(bot, msg){
 }
 
 function getSupply(bot, msg){
-  getDataFromAPI("https://boxy.blockxplorer.info/ext/getmoneysupply", true, function(result){
+  getDataFromAPI("https://blastx.blockxplorer.info/ext/getmoneysupply", true, function(result){
     if (result !== "undefined") {
       if (result) {
         sendEmbedMessages(msg, "", 0xF55555, [{
-          name: "BOXY Coin - Supply",
-          value: "Supply: **" + result + "** BOXY Coins"
+          name: "BLASTX Coin - Supply",
+          value: "Supply: **" + result + "** BLASTX Coins"
         }])
       } else {
         msg.reply("Price is not set by buyers/sellers")
@@ -494,15 +494,15 @@ function getDataFromAPI(url, sync, callback){
 
 function sendEmbedMessages(msg, description, color, fields) {
   let embed = new Discord.RichEmbed()
-    .setTitle("BOXY Coin")
+    .setTitle("BLASTX Coin")
     .setAuthor(msg.client.user.username, msg.client.user.avatarURL)
     .setColor(color)
     .setDescription(description)
-    .setFooter("© Boxy Coin", msg.client.user.avatarURL)
+    .setFooter("© Blastx Coin", msg.client.user.avatarURL)
     // .setImage("http://i.imgur.com/yVpymuV.png")
     .setThumbnail("https://i0.wp.com/www.mbird.com/wp-content/uploads/2013/01/Upward-Trend.png")
     .setTimestamp()
-    .setURL("https://boxycoin.live/");
+    .setURL("https://blastxcoin.live/");
   fields.forEach(function(f){
     embed = embed.addField(f.name, f.value)
   });
@@ -515,7 +515,7 @@ function sendDSRMessages(msg, description, color, fields) {
   let embed = new Discord.RichEmbed()
     .setColor(color)
     .setDescription(description)
-    .setFooter("© Boxy Coin", msg.client.user.avatarURL)
+    .setFooter("© Blastx Coin", msg.client.user.avatarURL)
     // .setImage("http://i.imgur.com/yVpymuV.png")
     .setTimestamp()
   fields.forEach(function(f){
@@ -530,21 +530,21 @@ function sendEmbedNameAndPic(msg, heading, color, url, description){
     let embed = new Discord.RichEmbed()
         .setTitle(heading)
         .setColor(color)
-        .setFooter("© Boxy Coin", msg.client.user.avatarURL)
+        .setFooter("© Blastx Coin", msg.client.user.avatarURL)
         .setDescription(description)
         .setImage(url)
         .setTimestamp()
-        .setURL("https://boxycoin.live/");
+        .setURL("https://blastxcoin.live/");
 
     msg.channel.send(embed)
 }
 
-function sendBOXY(bot, message, tipper, recipient, amount, privacyFlag) {
+function sendBLASTX(bot, message, tipper, recipient, amount, privacyFlag) {
   getAddress(recipient.toString(), function(err, address) {
     if (err) {
       message.reply("GET address Error: " +err.message).then(message => message.delete(5000));
     } else {
-      boxy.sendFrom(tipper, address, Number(amount), 1, null, null, function(err, txId) {
+      blastx.sendFrom(tipper, address, Number(amount), 1, null, null, function(err, txId) {
         if (err) {
           message.reply("Send from Error: " +err.message).then(message => message.delete(5000));
         } else {
@@ -553,24 +553,24 @@ function sendBOXY(bot, message, tipper, recipient, amount, privacyFlag) {
             var iimessage =
               ' You got privately tipped ' +
               amount +
-              ' BOXY\n' +
+              ' BLASTX\n' +
               txLink(txId) +
               '\n' +
-              'DM me `!help` for boxyTipper instructions.';
+              'DM me `!help` for blastxTipper instructions.';
             userProfile.user.send(iimessage);
             var imessage =
               ' You privately tipped ' +
               userProfile.user.username +
               ' ' +
               amount +
-              ' BOXY\n' +
+              ' BLASTX\n' +
               txLink(txId) +
               '\n' +
-              'DM me `!help` for boxyTipper instructions.';
+              'DM me `!help` for blastxTipper instructions.';
             message.author.send(imessage);
 
             if (
-              message.content.startsWith('!tipboxy private ')
+              message.content.startsWith('!tipblastx private ')
             ) {
               message.delete(1000); //Supposed to delete message
             }
@@ -580,10 +580,10 @@ function sendBOXY(bot, message, tipper, recipient, amount, privacyFlag) {
               recipient +
               '> ' +
               amount +
-              ' BOXY\n' +
+              ' BLASTX\n' +
               txLink(txId) +
               '\n' +
-              'DM me `!help` for boxyTipper instructions.';
+              'DM me `!help` for blastxTipper instructions.';
               message.reply(iiimessage);
           }
         }
@@ -593,13 +593,13 @@ function sendBOXY(bot, message, tipper, recipient, amount, privacyFlag) {
 }
 
 function getAddress(userId, cb) {
-  boxy.getAddressesByAccount(userId, function(err, addresses) {
+  blastx.getAddressesByAccount(userId, function(err, addresses) {
     if (err) {
       cb(err);
     } else if (addresses.length > 0) {
       cb(null, addresses[0]);
     } else {
-      boxy.getNewAddress(userId, function(err, address) {
+      blastx.getNewAddress(userId, function(err, address) {
         if (err) {
           cb(err);
         } else {
@@ -632,14 +632,14 @@ function compareDesc(a,b) {
 
 function getValidatedAmount(amount) {
   amount = amount.trim();
-  if (amount.toLowerCase().endsWith('boxy')) {
+  if (amount.toLowerCase().endsWith('blastx')) {
     amount = amount.substring(0, amount.length - 3);
   }
   return amount.match(/^[0-9]+(\.[0-9]+)?$/) ? amount : null;
 }
 
 function txLink(txId) {
-  return 'https://boxy.blockxplorer.info/tx/' + txId;
+  return 'https://blastx.blockxplorer.info/tx/' + txId;
 }
 
 
