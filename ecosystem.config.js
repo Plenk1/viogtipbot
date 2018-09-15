@@ -1,14 +1,15 @@
 module.exports = {
   apps: [
     {
-      name: 'TipBot',
+      name: 'Xbot',
       script: './bot/bot.js',
-      cwd: '/root/TipBot/',
+      cwd: '[Path-To-Bot]/Xbot/',
       instance_id_env: '0',
       watch: true,
       error_file:
-        '/root/TipBot/Logs/tipbot-err.log',
-      out_file: '/root/TipBot/Logs/tipbot-out.log',
+        '[Path-To-Bot]/Xbot/logs/tipbot-err.log',
+      out_file: 
+      '[Path-To-Bot]/Xbot/logs/tipbot-out.log',
       env: {
         NODE_ENV: 'development'
       },

@@ -1,0 +1,70 @@
+
+{
+  // Bot configuration
+  "bot": {
+      "token":"Get-Your-Own-Token",
+      "prefix": "$",
+      "debug": true
+  },
+  "blastxd": {
+    "port": 3335,
+    "user": "<RPCUSERNAME>",
+    "pass": "<RPCPASSWORD>"
+},
+  "boxyd": {
+      // "port": 3335,
+      // "user": "<RPCUSERNAME>",
+      // "pass": "<RPCPASSWORD>"
+  },
+  "ravend": {
+    // "port": 3335,
+    // "user": "username",
+    // "pass": "Do-Not-Use-This-Password-Youll-Be-Hacked-For-all-Teh-Moneys!"
+},
+  "doged": {
+    // "port": 3336,
+    // "user": "username",
+    // "pass": "Do-Not-Use-This-Password-Youll-Be-Hacked-For-all-Teh-Moneys!"
+},
+"lbryd": {
+  // "port": 3337,
+  // "user": "username",
+  // "pass": "Do-Not-Use-This-Password-Youll-Be-Hacked-For-all-Teh-Moneys!"
+},
+"protond": {
+  // "port": 3338,
+  // "user": "username",
+  // "pass": "Do-Not-Use-This-Password-Youll-Be-Hacked-For-all-Teh-Moneys!"
+},
+"ufod": {
+  // "port": 3338,
+  // "user": "username",
+  // "pass": "Do-Not-Use-This-Password-Youll-Be-Hacked-For-all-Teh-Moneys!"
+},
+"pxcd": {
+  // "port": 3339,
+  // "user": "username",
+  // "pass": "Do-Not-Use-This-Password-Youll-Be-Hacked-For-all-Teh-Moneys!"
+},
+"ftcd": {
+  // "port": 3340,
+  // "user": "username",
+  // "pass": "Do-Not-Use-This-Password-Youll-Be-Hacked-For-all-Teh-Moneys!"
+},
+"TigraCoind":{
+ // "port": 3340,
+  // "user": "username",
+  // "pass": "Do-Not-Use-This-Password-Youll-Be-Hacked-For-all-Teh-Moneys!"
+},
+  "moderation":{
+  "pm2Name": "Xbot",
+   // Roles that have access to all commands.
+  "perms": ["Admin","Dev Team","Community Manager","BlastX Tip Bot"],
+  // Bot Devs!
+  "botDev": "Dev Team",
+  // Channel to log the bots moderation..
+  "logchannel": "490423661400948736",
+  //channel that the tip message will reply in if Multi or Role tip is used.
+  "botspamchannels": ["453609477531238410", "453609960266399745"]
+  }
+}
