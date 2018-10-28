@@ -121,3 +121,4 @@ to run prettier before submitting your code simply run the following in the bots
 ```
 yarn precommit
 ```
+# viog-tip-bot
